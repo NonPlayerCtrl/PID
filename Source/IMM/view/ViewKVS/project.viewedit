@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base:Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://www.keba.at/viewedit.model.base" xmlns:kebasystem="http://www.keba.at/viewedit.kebasystemmodel" name="PID_ViewKVS" panel="OP 362-LD/C-6006" keViewVersion="V1.75" useLatestKVSVersion="false" splash="General/splash.jpg" internalViewEditVersion="5" internalViewVersion="4" viewEditVersion="1.16b" javaVersion="1.1.8" description="Standard KePlast HMI Application for IMM" projectID="e6e5929f-3b79-4827-9066-3286e20571d4">
+  <targetPlatform xsi:type="kebasystem:KebaSystemTargetPlatform" name="KEBA" propertiesFilePath="" iecprojectpath="..\..\ieccontrol" softKeyHeight="40" iecedit="6.35"/>
+  <downloadDevices key="OP 362-LD/C-6006" value="true"/>
+  <remoteVisuResolution width="800" height="600"/>
+  <classes key="libraries\help\help.jar" value="2a3a6e94-ab29-4908-8091-af6f5a52bdfc"/>
+  <classes key="libraries\help\alarm.jar" value="919d94a8-fc76-49c6-8a9c-0374e2863635"/>
+  <plugins key="libraries\HMI_KVS_BaseWidgets.jar" value="97f5d1b0-41d2-4dfc-9bdd-8aa1a9cd0947"/>
+</base:Project>

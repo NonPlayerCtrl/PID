@@ -1,0 +1,14 @@
+Sim
+Target
+Source/IMM/view/ViewKVS/contents/usermasks
+Source/IMM/AddFilesForExecutableSystem/pspooler
+Source/IMM/AddFilesForExecutableSystem/retain
+Source/IMM/AddFilesForExecutableSystem/workspace/data/units/templates
+Source/IMM/AddFilesForExecutableSystem/workspace/data/sequence/icons
+Source/IMM/AddFilesForExecutableSystem/workspace/data/lintab/moldheight
+Source/IMM/AddFilesForExecutableSystem/workspace/data/lintab/moldheightimpulse
+Source/IMM/AddFilesForExecutableSystem/protocol/datalogger
+Source/IMM/AddFilesForExecutableSystem/protocol/screenshots
+Source/IMM/AddFilesForExecutableSystem/protocol/Statusreport
+Source/IMM/AddFilesForExecutableSystem/protocol/ms_data/pdp
+Source/IMM/AddFilesForExecutableSystem/protocol/log/autocalib

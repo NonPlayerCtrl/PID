@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base:Mask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://www.keba.at/viewedit.model.base" widgetId="kvs.mask" name="ServiceNetSimInfoMask" internalViewEditVersion="5" internalViewVersion="4" viewEditVersion="1.16b" viewVersion="V1.75">
+  <resolution width="714" height="476"/>
+  <position x="1" y="1"/>
+  <attributeValues key="Background" value="BG_Desktop:30,30,30"/>
+  <attributeValues key="Title" value="ServiceNet Sim Info"/>
+  <attributeValues key="ShortTitle" value="Sim Info"/>
+  <attributeValues key="Icon" value="system/hmi/images/maskicons/iconServiceNetSimInfo.gif"/>
+  <attributeValues key="DisplayLevel" value="8"/>
+  <attributeValues key="InputLevel" value="8"/>
+  <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="ContainerMain" layoutConstraint="CENTER">
+    <resolution width="714" height="436"/>
+    <position/>
+    <attributeValues key="Background" value="220,220,220"/>
+    <border name="TitledBorder" id="kv.border.TitledBorder">
+      <attributeValues key="TitleText" value="SIM card information"/>
+    </border>
+    <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerSettings" layoutConstraint="LEFT">
+      <resolution width="489" height="169"/>
+      <position x="6" y="33"/>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerUserName" layoutConstraint="null">
+        <resolution width="479" height="29"/>
+        <position x="5"/>
+        <widgetInstances widgetId="kvs.varlabel" name="varlabelUserName" layoutConstraint="null">
+          <resolution width="239" height="29"/>
+          <position/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sUserName"/>
+          <attributeValues key="LabelType" value="Long Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.textfieldnew" name="tfUserName" layoutConstraint="null">
+          <resolution width="239" height="29"/>
+          <position x="239"/>
+          <attributeValues key="PreferredSize" value="200, 29"/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sUserName"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+          <attributeValues key="Columns" value="2"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerPassword" layoutConstraint="null">
+        <resolution width="479" height="29"/>
+        <position x="5" y="29"/>
+        <widgetInstances widgetId="kvs.varlabel" name="varlabelPassword" layoutConstraint="null">
+          <resolution width="239" height="29"/>
+          <position/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sPassword"/>
+          <attributeValues key="LabelType" value="Long Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.textfieldnew" name="tfPassword" layoutConstraint="null">
+          <resolution width="239" height="29"/>
+          <position x="239"/>
+          <attributeValues key="PreferredSize" value="200, 29"/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sPassword"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+          <attributeValues key="Columns" value="2"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerAPN" layoutConstraint="null">
+        <resolution width="479" height="29"/>
+        <position x="5" y="58"/>
+        <widgetInstances widgetId="kvs.varlabel" name="varlabelAPN" layoutConstraint="null">
+          <resolution width="239" height="29"/>
+          <position/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sAPN"/>
+          <attributeValues key="LabelType" value="Long Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.textfieldnew" name="tfAPN" layoutConstraint="null">
+          <resolution width="239" height="29"/>
+          <position x="239"/>
+          <attributeValues key="PreferredSize" value="200, 29"/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sAPN"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+          <attributeValues key="Columns" value="2"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerSimPin" layoutConstraint="null">
+        <resolution width="479" height="28"/>
+        <position x="5" y="87"/>
+        <widgetInstances widgetId="kvs.varlabel" name="varlabelSimCardPin" layoutConstraint="null">
+          <resolution width="239" height="28"/>
+          <position/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sPIN"/>
+          <attributeValues key="LabelType" value="Long Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.textfieldnew" name="tfSimCardPin" layoutConstraint="null">
+          <resolution width="239" height="28"/>
+          <position x="239"/>
+          <attributeValues key="Variable" value="ServiceNet.sv_SIMInfo.sPIN"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+          <attributeValues key="Columns" value="2"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerEmpty" layoutConstraint="null">
+        <resolution width="479" height="29"/>
+        <position x="5" y="115"/>
+        <attributeValues key="PreferredSize" value="479, 29"/>
+        <layout layoutID="kvs.layout.PercentLayout" name="PercentLayout"/>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerDownload" layoutConstraint="null">
+        <resolution width="479" height="25"/>
+        <position x="5" y="144"/>
+        <attributeValues key="PreferredSize" value="479, 25"/>
+        <widgetInstances widgetId="kvs.varlabel" name="varlabelDownload" layoutConstraint="null">
+          <resolution width="239" height="25"/>
+          <position/>
+          <attributeValues key="Variable" value="ServiceNet.sv_bDownloadSIMInfo"/>
+          <attributeValues key="LabelType" value="Long Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerDownloadButton" layoutConstraint="null">
+          <resolution width="239" height="25"/>
+          <position x="239"/>
+          <widgetInstances widgetId="kvs.actionbuttonnew" name="btnDownloadToModem" layoutConstraint="WEST">
+            <resolution width="60" height="25"/>
+            <position/>
+            <attributeValues key="IconName" value="ServiceNet/hmi/images/start16.gif"/>
+            <attributeValues key="PreferredSize" value="60, 40"/>
+            <dynamicAttributes key="Enabled">
+              <value function="b1_OR_b2_OR_isStringVariableEmpty : UserFunctions" equal="false" unequal="true">
+                <parameter key="1" value="kvariable;ServiceNet.sv_bConnect"/>
+                <parameter key="2" value="kvariable;ServiceNet.sv_bDownloadSIMInfo"/>
+                <parameter key="3" value="kvariable;ServiceNet.sv_SIMInfo.sAPN"/>
+              </value>
+            </dynamicAttributes>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.BorderLayout" name="BorderLayout"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.GridLayout" name="GridLayout"/>
+      </widgetInstances>
+      <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout">
+        <attributeValues key="Vgap" value="0"/>
+      </layout>
+    </widgetInstances>
+    <layout layoutID="keplast.kvs.layout.multisplitlayout" name="MultiSplitLayout">
+      <attributeValues key="PercentLeft" value="70"/>
+      <attributeValues key="PercentRight" value="30"/>
+    </layout>
+  </widgetInstances>
+  <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerButtons" layoutConstraint="SOUTH">
+    <resolution width="714" height="40"/>
+    <position y="436"/>
+    <widgetInstances widgetId="kvs.actionbuttonnew" name="btnConnect" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position/>
+      <attributeValues key="Text" value="Connect"/>
+      <attributeValues key="Enabled" value="false"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnServiceOverview" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="119"/>
+      <attributeValues key="Mask" value="ServiceNet/hmi/ServiceNetOverviewMask.smask"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnServiceSettings" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="238"/>
+      <attributeValues key="Mask" value="ServiceNet/hmi/ServiceNetSettingsMask.smask"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnSimInfo" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="357"/>
+      <attributeValues key="Mask" value="ServiceNet/hmi/ServiceNetSimInfoMask.smask"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnSimList" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="476"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.actionbuttonnew" name="actionButton1" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="595"/>
+      <attributeValues key="Enabled" value="false"/>
+    </widgetInstances>
+    <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+      <attributeValues key="Columns" value="6"/>
+    </layout>
+  </widgetInstances>
+  <layout layoutID="kvs.layout.BorderLayout" name="BorderLayout"/>
+</base:Mask>
+

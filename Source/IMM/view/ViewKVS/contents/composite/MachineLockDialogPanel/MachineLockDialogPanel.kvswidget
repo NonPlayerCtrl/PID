@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base:CompositeWidget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://www.keba.at/viewedit.model.base" name="MachineLockDialogPanel" category="Composite" icon="C:/Kemro/KeView ViewStandard/V1.72e/ViewEdit/Widgets/icons/CompositeWidget.gif" id="bc021217-ae32-4453-886d-ab8961578135" internalViewEditVersion="5" internalViewVersion="4" viewEditVersion="1.16b" viewVersion="V1.75">
+  <attributes xsi:type="base:DelegatingAttribute" name="PreferredSize" type="resolution" section="layout" layoutContainerNeeded="true" defaultValue="10, 10">
+    <references attributeName="PreferredSize" widgetInstance="//@container"/>
+  </attributes>
+  <container widgetId="kvs.panel" name="MachineLockDialogPanel_container" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" isCompositeRoot="true">
+    <resolution width="461" height="611"/>
+    <position/>
+    <widgetInstances widgetId="kvs.label" name="lblCaption" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+      <resolution width="451" height="21"/>
+      <position x="5" y="15"/>
+      <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+      <attributeValues key="Text" value="New machine lock data found on USB device!"/>
+    </widgetInstances>
+    <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pStateCurrent" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+      <resolution width="451" height="198"/>
+      <position x="5" y="51"/>
+      <widgetInstances widgetId="kvs.label" name="lblStateCurrent" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="21"/>
+        <position x="5" y="5"/>
+        <attributeValues key="Text" value="Current machinelock status:"/>
+        <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pCpuSerial" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="28"/>
+        <position x="5" y="31"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblCpuSerial1" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="3"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="Variable" value="system.sv_iCpuId"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.numfieldnew" name="fCpuSerial" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="100" height="28"/>
+          <position x="200"/>
+          <attributeValues key="PreferredSize" value="100, 28"/>
+          <attributeValues key="Editable" value="false"/>
+          <attributeValues key="Variable" value="system.sv_iCpuId"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pLockFileCnt" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="28"/>
+        <position x="5" y="64"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblLockFileCnt" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="3"/>
+          <attributeValues key="Variable" value="system.sv_MachineLockData.cnt.iFileNr"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="container2" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="102" height="28"/>
+          <position x="200"/>
+          <widgetInstances widgetId="kvs.numfieldnew" name="fMachineFileLockNrAct" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+            <resolution width="33" height="28"/>
+            <position x="4"/>
+            <attributeValues key="PreferredSize" value="33, 28"/>
+            <attributeValues key="Enabled" value="false"/>
+            <attributeValues key="Editable" value="false"/>
+            <attributeValues key="Variable" value="system.sv_MachineLockData.cnt.iFileNr"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.label" name="lbl" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+            <resolution width="20" height="28"/>
+            <position x="41"/>
+            <attributeValues key="Text" value="/"/>
+            <attributeValues key="PreferredSize" value="20, 28"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.numfieldnew" name="fMachineFileLockNrAll" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+            <resolution width="33" height="28"/>
+            <position x="65"/>
+            <attributeValues key="PreferredSize" value="33, 28"/>
+            <attributeValues key="Enabled" value="false"/>
+            <attributeValues key="Editable" value="false"/>
+            <attributeValues key="Variable" value="system.sv_MachineLockData.cnt.iFileNrAll"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+            <attributeValues key="Alignment" value="LEFT"/>
+            <attributeValues key="Hgap" value="4"/>
+            <attributeValues key="Vgap" value="0"/>
+          </layout>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pMachineLocked" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="29"/>
+        <position x="5" y="97"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblLocked" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="4"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="Variable" value="system.sv_MachineLocked"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.mark" name="markLocked" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="29" height="29"/>
+          <position x="200"/>
+          <attributeValues key="MarkSize" value="29"/>
+          <attributeValues key="MarkColor" value="94,151,24"/>
+          <attributeValues key="Variable" value="system.sv_MachineLocked"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pMachineLockActive" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="29"/>
+        <position x="5" y="131"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblLockKeyActive" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="4"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="Variable" value="system.sv_LockActive"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.mark" name="markLockActive" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="29" height="29"/>
+          <position x="200"/>
+          <attributeValues key="MarkSize" value="29"/>
+          <attributeValues key="MarkColor" value="94,151,24"/>
+          <attributeValues key="Variable" value="system.sv_LockActive"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pExpireDate" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="28"/>
+        <position x="5" y="165"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblExpireDate" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="3"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="Variable" value="system.sv_ExpireDate"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.datetimefieldnew" name="fExpireDate" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="100" height="28"/>
+          <position x="200"/>
+          <attributeValues key="DateTimeFormat" value="MEDIUM"/>
+          <attributeValues key="Mode" value="DATE"/>
+          <attributeValues key="Editable" value="false"/>
+          <attributeValues key="PreferredSize" value="100, 28"/>
+          <attributeValues key="Variable" value="system.sv_ExpireDate"/>
+          <attributeValues key="Enabled" value="true"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout"/>
+    </widgetInstances>
+    <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pStateNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+      <resolution width="451" height="131"/>
+      <position x="5" y="264"/>
+      <widgetInstances widgetId="kvs.label" name="lblStateNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="21"/>
+        <position x="5" y="5"/>
+        <attributeValues key="Text" value="New machinelock status:"/>
+        <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pLockFileCntNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="28"/>
+        <position x="5" y="31"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblLockFileCntNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="3"/>
+          <attributeValues key="Variable" value="system.sv_MachineLockData.cnt.iFileNr"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="container3" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="102" height="28"/>
+          <position x="200"/>
+          <widgetInstances widgetId="kvs.numfieldnew" name="fMachineFileLockNrActNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+            <resolution width="33" height="28"/>
+            <position x="4"/>
+            <attributeValues key="PreferredSize" value="33, 28"/>
+            <attributeValues key="Enabled" value="false"/>
+            <attributeValues key="Editable" value="false"/>
+            <attributeValues key="Variable" value="system.sv_MachineLockDlg.data.cnt.iFileNr"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.label" name="lblNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+            <resolution width="20" height="28"/>
+            <position x="41"/>
+            <attributeValues key="Text" value="/"/>
+            <attributeValues key="PreferredSize" value="20, 28"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.numfieldnew" name="fMachineFileLockNrAllNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+            <resolution width="33" height="28"/>
+            <position x="65"/>
+            <attributeValues key="PreferredSize" value="33, 28"/>
+            <attributeValues key="Enabled" value="false"/>
+            <attributeValues key="Editable" value="false"/>
+            <attributeValues key="Variable" value="system.sv_MachineLockDlg.data.cnt.iFileNrAll"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+            <attributeValues key="Alignment" value="LEFT"/>
+            <attributeValues key="Hgap" value="4"/>
+            <attributeValues key="Vgap" value="0"/>
+          </layout>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pMachineLockActiveNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="29"/>
+        <position x="5" y="64"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblLockActiveNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="4"/>
+          <attributeValues key="Variable" value="system.sv_LockActive"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.mark" name="markLockActiveNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="29" height="29"/>
+          <position x="200"/>
+          <attributeValues key="MarkSize" value="29"/>
+          <attributeValues key="MarkColor" value="94,151,24"/>
+          <attributeValues key="Variable" value="system.sv_MachineLockDlg.bNewLockState"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="pExpireDateNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="441" height="28"/>
+        <position x="5" y="98"/>
+        <widgetInstances widgetId="kvs.varlabel" name="lblExpireDateNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="170" height="21"/>
+          <position x="15" y="3"/>
+          <attributeValues key="PreferredSize" value="170, 21"/>
+          <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+          <attributeValues key="Variable" value="system.sv_ExpireDate"/>
+          <attributeValues key="LabelType" value="Short Variable Label"/>
+        </widgetInstances>
+        <widgetInstances widgetId="kvs.datetimefieldnew" name="fExpireDateNew" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+          <resolution width="100" height="28"/>
+          <position x="200"/>
+          <attributeValues key="DateTimeFormat" value="MEDIUM"/>
+          <attributeValues key="Mode" value="DATE"/>
+          <attributeValues key="Editable" value="false"/>
+          <attributeValues key="PreferredSize" value="100, 28"/>
+          <attributeValues key="Variable" value="system.sv_MachineLockDlg.dExpireDate"/>
+          <attributeValues key="Enabled" value="true"/>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+          <attributeValues key="Alignment" value="LEFT"/>
+          <attributeValues key="Hgap" value="15"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout"/>
+    </widgetInstances>
+    <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="container1" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+      <resolution width="451" height="31"/>
+      <position x="5" y="410"/>
+      <widgetInstances widgetId="kvs.label" name="lblUpdateQuestion" compositeWidgetID="bc021217-ae32-4453-886d-ab8961578135" layoutConstraint="null">
+        <resolution width="297" height="21"/>
+        <position x="5" y="5"/>
+        <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+        <attributeValues key="Text" value="Do you want to update?"/>
+        <attributeValues key="PreferredSize" value="297, 21"/>
+      </widgetInstances>
+      <layout layoutID="kvs.layout.FlowLayout" name="FlowLayout">
+        <attributeValues key="Alignment" value="LEFT"/>
+      </layout>
+    </widgetInstances>
+    <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout">
+      <attributeValues key="Vgap" value="15"/>
+    </layout>
+  </container>
+</base:CompositeWidget>
+

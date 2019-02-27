@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base:CompositeWidget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://www.keba.at/viewedit.model.base" name="ScopeBitmap" category="Composite" icon="D:/Kemro/KeView ViewStandard/V1.75RC2/ViewEdit/Widgets/icons/CompositeWidget.gif" id="dc6ec7b4-5845-4521-9d0a-2453aaa99dfb" internalViewEditVersion="5" internalViewVersion="4" viewEditVersion="1.16b" viewVersion="V1.75">
+  <attributes xsi:type="base:DelegatingAttribute" name="PreferredSize" type="resolution" section="layout" layoutContainerNeeded="true" defaultValue="32, 32">
+    <references attributeName="PreferredSize" widgetInstance="//@container"/>
+  </attributes>
+  <attributes xsi:type="base:DelegatingAttribute" name="Visible" type="boolean" section="basic" defaultValue="true">
+    <references attributeName="Visible" widgetInstance="//@container"/>
+    <references attributeName="Visible" widgetInstance="//@container/@widgetInstances.0"/>
+  </attributes>
+  <attributes xsi:type="base:DelegatingAttribute" name="Background" type="newcolor" section="basic" defaultValue="BG_Panel:220,220,220">
+    <references attributeName="Background" widgetInstance="//@container"/>
+  </attributes>
+  <container widgetId="kvs.panel" name="ScopeBitmap_container" compositeWidgetID="dc6ec7b4-5845-4521-9d0a-2453aaa99dfb" isCompositeRoot="true">
+    <resolution width="32" height="32"/>
+    <position/>
+    <attributeValues key="PreferredSize" value="32, 32"/>
+    <attributeValues key="Background" value="BG_Panel:220,220,220"/>
+    <widgetInstances widgetId="kvs.bitmap" name="bmpState" compositeWidgetID="dc6ec7b4-5845-4521-9d0a-2453aaa99dfb" layoutConstraint="CENTER">
+      <resolution width="32" height="32"/>
+      <position/>
+      <attributeValues key="Image" value="composite/ServiceNetOrTigBitmap/images/movNoMove.gif"/>
+      <attributeValues key="PreferredSize" value="26, 26"/>
+    </widgetInstances>
+    <layout layoutID="kvs.layout.BorderLayout" name="BorderLayout"/>
+  </container>
+</base:CompositeWidget>
+

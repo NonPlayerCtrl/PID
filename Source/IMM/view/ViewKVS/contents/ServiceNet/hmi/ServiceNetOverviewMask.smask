@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base:Mask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://www.keba.at/viewedit.model.base" widgetId="kvs.mask" name="ServiceNetOverviewMask" internalViewEditVersion="5" internalViewVersion="4" viewEditVersion="1.16b" viewVersion="V1.75">
+  <resolution width="714" height="476"/>
+  <position x="1" y="1"/>
+  <attributeValues key="Background" value="BG_Desktop:30,30,30"/>
+  <attributeValues key="Icon" value="system/hmi/images/maskicons/iconServiceNetOverview.gif"/>
+  <attributeValues key="Title" value="ServiceNet Overview"/>
+  <attributeValues key="ShortTitle" value="Overview"/>
+  <attributeValues key="DisplayLevel" value="3"/>
+  <attributeValues key="InputLevel" value="8"/>
+  <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="MainContainer" layoutConstraint="CENTER">
+    <resolution width="713" height="436"/>
+    <position/>
+    <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="keplast.kvs.borderpanelsmall" name="panelContactInfo" layoutConstraint="null">
+      <resolution width="713" height="223"/>
+      <position/>
+      <attributeValues key="Title" value="Contact information"/>
+      <attributeValues key="PreferredSize" value="713, 223"/>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerContactSettings" layoutConstraint="LEFT">
+        <resolution width="488" height="174"/>
+        <position x="6" y="35"/>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerContactTo" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabContactTo" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_iContactToIdx"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.textselectliststd" name="comboContactTo" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position x="244"/>
+            <attributeValues key="PreferredSize" value="200, 29"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerRequestFrom" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position y="29"/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabRequestFrom" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_iRequestFromIdx"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.textselectliststd" name="comboRequestFrom" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position x="244"/>
+            <attributeValues key="PreferredSize" value="200, 29"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerTextMessage" layoutConstraint="null">
+          <resolution width="488" height="58"/>
+          <position y="58"/>
+          <attributeValues key="PreferredSize" value="488, 58"/>
+          <widgetInstances widgetId="kvs.label" name="labTextMessage" layoutConstraint="null">
+            <resolution width="244" height="58"/>
+            <position/>
+            <attributeValues key="Text" value="Text message (max. 256 signs)"/>
+            <attributeValues key="Alignment" value="TOP/LEFT"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.textarea" name="tfTextMessage" layoutConstraint="null">
+            <resolution width="244" height="58"/>
+            <position x="244"/>
+            <attributeValues key="BackgroundActive" value="true"/>
+            <attributeValues key="PreferredColumns" value="3"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerEmpty" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position y="116"/>
+          <attributeValues key="PreferredSize" value="488, 29"/>
+          <layout layoutID="kvs.layout.PercentLayout" name="PercentLayout"/>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerState" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position y="145"/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabState" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_ConnectionStatus"/>
+          </widgetInstances>
+          <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerStateShadow" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position x="244"/>
+            <widgetInstances widgetId="kvs.textdisplay" name="tfState" layoutConstraint="CENTER">
+              <resolution width="244" height="29"/>
+              <position/>
+              <attributeValues key="Variable" value="ServiceNet.sv_ConnectionStatus"/>
+              <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+              <attributeValues key="PreferredSize" value="200, 29"/>
+            </widgetInstances>
+            <layout layoutID="kvs.layout.BorderLayout" name="BorderLayout"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout">
+          <attributeValues key="Vgap" value="0"/>
+          <attributeValues key="OuterGaps" value="false"/>
+        </layout>
+      </widgetInstances>
+      <layout layoutID="keplast.kvs.layout.multisplitlayout" name="MultiSplitLayout">
+        <attributeValues key="PercentLeft" value="70"/>
+        <attributeValues key="PercentRight" value="30"/>
+      </layout>
+    </widgetInstances>
+    <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="keplast.kvs.borderpanelsmall" name="panelMachineInfo" layoutConstraint="null">
+      <resolution width="713" height="209"/>
+      <position y="227"/>
+      <attributeValues key="Title" value="Machine information"/>
+      <attributeValues key="PreferredSize" value="713, 209"/>
+      <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerMachineSettings" layoutConstraint="LEFT">
+        <resolution width="488" height="144"/>
+        <position x="6" y="35"/>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerSerial" layoutConstraint="null">
+          <resolution width="488" height="28"/>
+          <position/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabSerial" layoutConstraint="null">
+            <resolution width="244" height="28"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="system.sv_iCpuId"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.numfieldnew" name="numField1" layoutConstraint="null">
+            <resolution width="244" height="28"/>
+            <position x="244"/>
+            <attributeValues key="Editable" value="false"/>
+            <attributeValues key="Variable" value="system.sv_iCpuId"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerCustomerName" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position y="28"/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabCustomerName" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sCustomerName"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.textfieldnew" name="tfCustomerName" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position x="244"/>
+            <attributeValues key="PreferredSize" value="200, 29"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sCustomerName"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerMachineName" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position y="57"/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabMachineName" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sMachineName"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.textfieldnew" name="tfMachineName" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position x="244"/>
+            <attributeValues key="PreferredSize" value="200, 29"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sMachineName"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerCountry" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position y="86"/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabCountry" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sCountryCode"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.textfieldnew" name="tfCountry" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position x="244"/>
+            <attributeValues key="PreferredSize" value="200, 29"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sCountryCode"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerLicenseKey" layoutConstraint="null">
+          <resolution width="488" height="29"/>
+          <position y="115"/>
+          <widgetInstances widgetId="kvs.varlabel" name="varlabLicenseKey" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position/>
+            <attributeValues key="LabelType" value="Long Variable Label"/>
+            <attributeValues key="Alignment" value="MIDDLE/LEFT"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sLicenseKey"/>
+          </widgetInstances>
+          <widgetInstances widgetId="kvs.textfieldnew" name="tfLicenseKey" layoutConstraint="null">
+            <resolution width="244" height="29"/>
+            <position x="244"/>
+            <attributeValues key="PreferredSize" value="200, 29"/>
+            <attributeValues key="Variable" value="ServiceNet.sv_MachineInformation.sLicenseKey"/>
+          </widgetInstances>
+          <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+            <attributeValues key="Columns" value="2"/>
+          </layout>
+        </widgetInstances>
+        <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout">
+          <attributeValues key="OuterGaps" value="false"/>
+          <attributeValues key="Vgap" value="0"/>
+        </layout>
+      </widgetInstances>
+      <layout layoutID="keplast.kvs.layout.multisplitlayout" name="MultiSplitLayout">
+        <attributeValues key="PercentLeft" value="70"/>
+        <attributeValues key="PercentRight" value="30"/>
+      </layout>
+    </widgetInstances>
+    <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout">
+      <attributeValues key="OuterGaps" value="false"/>
+      <attributeValues key="Vgap" value="4"/>
+    </layout>
+  </widgetInstances>
+  <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerButtons" layoutConstraint="SOUTH">
+    <resolution width="714" height="40"/>
+    <position y="436"/>
+    <widgetInstances widgetId="kvs.actionbuttonnew" name="btnRequest" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position/>
+      <attributeValues key="Text" value="Connect"/>
+      <dynamicAttributes key="Enabled">
+        <value function="b1_EQ_true : ViewEditFunctions" equal="false" unequal="true">
+          <parameter key="1" value="kvariable;ServiceNet.sv_bDownloadSIMInfo"/>
+        </value>
+      </dynamicAttributes>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnServiceOverview" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="119"/>
+      <attributeValues key="Mask" value="ServiceNet/hmi/ServiceNetOverviewMask.smask"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnServiceSettings" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="238"/>
+      <attributeValues key="Mask" value="ServiceNet/hmi/ServiceNetSettingsMask.smask"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnSimInfo" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="357"/>
+      <attributeValues key="Mask" value="ServiceNet/hmi/ServiceNetSimInfoMask.smask"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.maskbutton" name="btnSimList" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="476"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.actionbuttonnew" name="actionButton5" layoutConstraint="null">
+      <resolution width="119" height="40"/>
+      <position x="595"/>
+      <attributeValues key="Enabled" value="false"/>
+    </widgetInstances>
+    <layout layoutID="kvs.layout.GridLayout" name="GridLayout">
+      <attributeValues key="Columns" value="6"/>
+    </layout>
+  </widgetInstances>
+  <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerInvisible" layoutConstraint="EAST">
+    <resolution width="1" height="436"/>
+    <position x="713"/>
+    <attributeValues key="Visible" value="false"/>
+    <attributeValues key="PreferredSize" value="1, 10"/>
+    <widgetInstances widgetId="kvs.label" name="labConnect" layoutConstraint="null">
+      <resolution width="61" height="21"/>
+      <position x="9" y="5"/>
+      <attributeValues key="Text" value="Connect"/>
+    </widgetInstances>
+    <widgetInstances widgetId="kvs.label" name="labDisconnect" layoutConstraint="null">
+      <resolution width="61" height="21"/>
+      <position x="9" y="31"/>
+      <attributeValues key="Text" value="Disconnect"/>
+    </widgetInstances>
+    <layout layoutID="kvs.layout.VerticalFlowLayout" name="VerticalFlowLayout"/>
+  </widgetInstances>
+  <layout layoutID="kvs.layout.BorderLayout" name="BorderLayout"/>
+</base:Mask>
+
