@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <base:Mask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://www.keba.at/viewedit.model.base" widgetId="kvs.mask" name="MoldParameterMask1" internalViewEditVersion="5" internalViewVersion="4" viewEditVersion="1.16b" viewVersion="V1.75">
-  <resolution width="714" height="476"/>
+  <resolution width="684" height="476"/>
   <position x="1" y="1"/>
   <attributeValues key="Icon" value="Mold1/hmi/images/iconMoldParam.gif"/>
   <attributeValues key="Title" value="Mold parameters"/>
   <attributeValues key="Background" value="BG_Desktop:30,30,30"/>
   <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="keplast.kvs.borderpanelsmall" name="panelParameter" layoutConstraint="NORTH">
-    <resolution width="714" height="388"/>
+    <resolution width="684" height="388"/>
     <position/>
     <attributeValues key="PreferredSize" value="714, 388"/>
     <attributeValues key="Title" value="Mold parameter settings"/>
     <attributeValues key="Background" value="BG_Panel:220,220,220"/>
     <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="panelParamsLeft" layoutConstraint="LEFT">
-      <resolution width="347" height="348"/>
+      <resolution width="332" height="348"/>
       <position x="6" y="33"/>
       <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="numfieldMoldCloseMaxTime" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position/>
         <attributeValues key="Variable" value="Mold1.sv_MoldCloseTimesSet.dMaxMoveTime"/>
         <attributeValues key="VariableActual" value="Mold1.sv_MoldCloseTimesAct.dActMoveTime"/>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="numfieldMoldOpenMaxTime" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="29"/>
         <attributeValues key="Variable" value="Mold1.sv_MoldOpenTimesSet.dMaxMoveTime"/>
         <attributeValues key="VariableActual" value="Mold1.sv_MoldOpenTimesAct.dActMoveTime"/>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="numfieldMoldLockMaxTime" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="58"/>
         <attributeValues key="Variable" value="Mold1.sv_MoldLockTimesSet.dMaxMoveTime"/>
         <attributeValues key="VariableActual" value="Mold1.sv_MoldLockTimesAct.dActMoveTime"/>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="numfieldMoldDecompMaxTime" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="87"/>
         <attributeValues key="Variable" value="Mold1.sv_MoldLockDecompTimesSet.dMaxMoveTime"/>
         <attributeValues key="VariableActual" value="Mold1.sv_MoldLockDecompTimesAct.dActMoveTime"/>
@@ -45,12 +45,12 @@
         </dynamicAttributes>
       </widgetInstances>
       <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="containerLeftGap1" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="116"/>
         <layout layoutID="kvs.layout.PercentLayout" name="PercentLayout"/>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.checkboxtext" name="chkboxFastClose" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="145"/>
         <attributeValues key="Variable" value="Mold1.sv_bFastClose"/>
         <dynamicAttributes key="Create">
@@ -60,7 +60,7 @@
         </dynamicAttributes>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.checkboxtext" name="chkboxOpenDuringPlast" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="174"/>
         <attributeValues key="Variable" value="CentralCoordination1.sv_bClampOpenDuringPlast"/>
         <dynamicAttributes key="Create">
@@ -70,12 +70,12 @@
         </dynamicAttributes>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.checkboxtext" name="chkboxOpenAfterProtectError" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="203"/>
         <attributeValues key="Variable" value="Mold1.sv_bOpenAfterProtect"/>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.numfieldtext" name="numfieldProtectRetry" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="232"/>
         <attributeValues key="Variable" value="system.sv_iSetMoldProtectRetry"/>
         <dynamicAttributes key="Enabled">
@@ -85,7 +85,7 @@
         </dynamicAttributes>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.checkboxtext" name="chkboxOptimizeMoldPositioning" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="261"/>
         <attributeValues key="Variable" value="Mold1.sv_MoldBwdProfVis.bUseOffsetOptimizing"/>
         <dynamicAttributes key="Create">
@@ -97,7 +97,7 @@
         </dynamicAttributes>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.checkboxtext" name="chkboxEjectorSafetyDI" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="290"/>
         <attributeValues key="Variable" value="Ejector1.sv_bCheckSafetyPlateDI"/>
         <dynamicAttributes key="Create">
@@ -107,7 +107,7 @@
         </dynamicAttributes>
       </widgetInstances>
       <widgetInstances widgetId="keplast.kvs.numfieldtext" name="fHighPresKeepTime" layoutConstraint="null">
-        <resolution width="347" height="29"/>
+        <resolution width="332" height="29"/>
         <position y="319"/>
         <attributeValues key="Variable" value="Mold1.sv_dHighPresKeepTime"/>
         <dynamicAttributes key="Create">
@@ -124,15 +124,15 @@
       </layout>
     </widgetInstances>
     <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="panelParamsRight" layoutConstraint="RIGHT">
-      <resolution width="347" height="351"/>
-      <position x="361" y="33"/>
+      <resolution width="332" height="351"/>
+      <position x="346" y="33"/>
       <attributeValues key="PreferredSize" value="347, 355"/>
       <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="container2" layoutConstraint="CENTER">
-        <resolution width="347" height="148"/>
+        <resolution width="332" height="148"/>
         <position y="87"/>
         <attributeValues key="PreferredSize" value="347, 116"/>
         <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="cRotaryTable" layoutConstraint="0, 0, 100, 79">
-          <resolution width="347" height="116"/>
+          <resolution width="332" height="116"/>
           <position/>
           <dynamicAttributes key="Create">
             <value function="doesDeviceExist : UserFunctions" equal="true" unequal="false">
@@ -140,7 +140,7 @@
             </value>
           </dynamicAttributes>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fLockPinIn" layoutConstraint="null">
-            <resolution width="347" height="29"/>
+            <resolution width="332" height="29"/>
             <position/>
             <attributeValues key="Variable" value="RotaryTable1.sv_PinInTimesSet.dMaxMoveTime"/>
             <attributeValues key="VariableActual" value="RotaryTable1.sv_PinInTimesAct.dActMoveTime"/>
@@ -151,7 +151,7 @@
             </dynamicAttributes>
           </widgetInstances>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fLockPinOut" layoutConstraint="null">
-            <resolution width="347" height="29"/>
+            <resolution width="332" height="29"/>
             <position y="29"/>
             <attributeValues key="VariableActual" value="RotaryTable1.sv_PinOutTimesAct.dActMoveTime"/>
             <attributeValues key="Variable" value="RotaryTable1.sv_PinOutTimesSet.dMaxMoveTime"/>
@@ -162,7 +162,7 @@
             </dynamicAttributes>
           </widgetInstances>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fRotateCW" layoutConstraint="null">
-            <resolution width="347" height="29"/>
+            <resolution width="332" height="29"/>
             <position y="58"/>
             <attributeValues key="VariableActual" value="RotaryTable1.sv_RotateCCWTimesAct.dActMoveTime"/>
             <attributeValues key="Variable" value="RotaryTable1.sv_RotateCCWTimesSet.dMaxMoveTime"/>
@@ -174,7 +174,7 @@
             </dynamicAttributes>
           </widgetInstances>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fRotateCCW" layoutConstraint="null">
-            <resolution width="347" height="29"/>
+            <resolution width="332" height="29"/>
             <position y="87"/>
             <attributeValues key="VariableActual" value="RotaryTable1.sv_RotateCWTimesAct.dActMoveTime"/>
             <attributeValues key="Variable" value="RotaryTable1.sv_RotateCWTimesSet.dMaxMoveTime"/>
@@ -189,7 +189,7 @@
           </layout>
         </widgetInstances>
         <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="cSlideTable" layoutConstraint="0, 0, 100, 79">
-          <resolution width="347" height="116"/>
+          <resolution width="332" height="116"/>
           <position/>
           <dynamicAttributes key="Create">
             <value function="doesDeviceExist : UserFunctions" equal="true" unequal="false">
@@ -197,7 +197,7 @@
             </value>
           </dynamicAttributes>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fLockPinIn2" layoutConstraint="0, 1, 100, 25">
-            <resolution width="347" height="29"/>
+            <resolution width="332" height="29"/>
             <position y="1"/>
             <attributeValues key="VariableActual" value="SlideTable1.sv_PinInTimesAct.dActMoveTime"/>
             <attributeValues key="Variable" value="SlideTable1.sv_PinInTimesSet.dMaxMoveTime"/>
@@ -208,7 +208,7 @@
             </dynamicAttributes>
           </widgetInstances>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fLockPinOut2" layoutConstraint="0, 25, 100, 25">
-            <resolution width="347" height="29"/>
+            <resolution width="332" height="29"/>
             <position y="29"/>
             <attributeValues key="VariableActual" value="SlideTable1.sv_PinOutTimesAct.dActMoveTime"/>
             <attributeValues key="Variable" value="SlideTable1.sv_PinOutTimesSet.dMaxMoveTime"/>
@@ -219,7 +219,7 @@
             </dynamicAttributes>
           </widgetInstances>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fSlideIn" layoutConstraint="0, 51, 100, 25">
-            <resolution width="347" height="29"/>
+            <resolution width="332" height="29"/>
             <position y="59"/>
             <attributeValues key="VariableActual" value="SlideTable1.sv_FwdTimesAct.dActMoveTime"/>
             <attributeValues key="Variable" value="SlideTable1.sv_FwdTimesSet.dMaxMoveTime"/>
@@ -230,7 +230,7 @@
             </dynamicAttributes>
           </widgetInstances>
           <widgetInstances widgetId="keplast.kvs.actsetnumfieldtext" name="fSlideOut" layoutConstraint="0, 76, 100, 24">
-            <resolution width="347" height="27"/>
+            <resolution width="332" height="27"/>
             <position y="88"/>
             <attributeValues key="VariableActual" value="SlideTable1.sv_BwdTimesAct.dActMoveTime"/>
             <attributeValues key="Variable" value="SlideTable1.sv_BwdTimesSet.dMaxMoveTime"/>
@@ -245,11 +245,11 @@
         <layout layoutID="kvs.layout.PercentLayout" name="PercentLayout"/>
       </widgetInstances>
       <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="container1" layoutConstraint="NORTH">
-        <resolution width="347" height="87"/>
+        <resolution width="332" height="87"/>
         <position/>
         <attributeValues key="PreferredSize" value="347, 87"/>
         <widgetInstances widgetId="keplast.kvs.numfieldtext" name="numfieldMoldProtTolerance" layoutConstraint="null">
-          <resolution width="347" height="29"/>
+          <resolution width="332" height="29"/>
           <position/>
           <attributeValues key="Variable" value="MotionProtectMold1.sv_rMotionProtectTolYRel"/>
           <dynamicAttributes key="Create">
@@ -259,7 +259,7 @@
           </dynamicAttributes>
         </widgetInstances>
         <widgetInstances widgetId="keplast.kvs.checkboxtext" name="chkboxMoldProtCyclInit" layoutConstraint="null">
-          <resolution width="347" height="29"/>
+          <resolution width="332" height="29"/>
           <position y="29"/>
           <attributeValues key="Variable" value="MotionProtectMold1.sv_MotionProtectData.bUseLastCycle"/>
           <dynamicAttributes key="Create">
@@ -274,7 +274,7 @@
         </layout>
       </widgetInstances>
       <widgetInstances xsi:type="base:ContainerWidgetInstance" widgetId="kvs.panel" name="container3" layoutConstraint="SOUTH">
-        <resolution width="347" height="116"/>
+        <resolution width="332" height="116"/>
         <position y="235"/>
         <attributeValues key="PreferredSize" value="347, 116"/>
         <layout layoutID="kvs.layout.PercentLayout" name="PercentLayout"/>
@@ -283,7 +283,7 @@
     </widgetInstances>
     <widgetInstances widgetId="keplast.kvs.separator" name="separator1" layoutConstraint="SEPARATOR">
       <resolution width="2" height="351"/>
-      <position x="356" y="33"/>
+      <position x="341" y="33"/>
     </widgetInstances>
     <layout layoutID="keplast.kvs.layout.horizontalsplitlayout" name="HorizontalSplitLayout"/>
   </widgetInstances>
@@ -291,4 +291,3 @@
     <attributeValues key="Vgap" value="6"/>
   </layout>
 </base:Mask>
-

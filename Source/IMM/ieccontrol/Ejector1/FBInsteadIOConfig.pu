@@ -1,0 +1,73 @@
+FUNCTION_BLOCK FBInsteadIOConfig #DUMMY_EDIT_BLOCK
+
+VAR_INPUT
+ IOPath : STRING(255);
+END_VAR
+
+VAR
+ SystemPath : STRING(255) := '/harddisk0/application/control/config/KeStudio_generated/Device1/PlcIo.cfgr';
+END_VAR
+#BEGIN_EDIT_BLOCK
+Stable_Copy := KFILE_Copy(IOPath,SystemPath);
+
+
+;#END_EDIT_BLOCK END_FUNCTION_BLOCK
+
+
+
+#END_OF_IEC_PART
+
+@Puma @IecEditor 6 152 @Pou 25 
+@@@BEG_Comment@@@
+
+@@@END_Comment@@@
+
+@BEG_Contents 
+
+@BEG_Func 
+@RT(17)FuncTreeContainer 
+0 
+@END_Func 
+
+@BEG_Const 
+@RT(18)ConstTreeContainer 
+0 
+@END_Const 
+
+@BEG_Export 
+
+@BEG_Kind 
+@FUNCTION_BLOCK @RT(17)FBInsteadIOConfig @STRUCTURED_TEXT 
+@RT(0) @RT(0) @RT(0) 
+@END_Kind 
+
+@BEG_Dcl 
+@RT(16)DclTreeContainer 
+2 
+@Var @RT(10)SystemPath @RT(0) @T @F @DT @RT(11)STRING(255) @RT(0) @T @T @STRING 0 @F @RT(3)255 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(77)'/harddisk0/application/control/config/KeStudio_generated/Device1/PlcIo.cfgr' @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@Var @RT(6)IOPath @RT(0) @T @F @DT @RT(11)STRING(255) @RT(0) @T @T @STRING 0 @F @RT(3)255 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 1 @F @F @F @F 
+
+@END_Dcl 
+
+@END_Export 
+
+@BEG_Body 
+@TL(2)
+Stable_Copy := KFILE_Copy(IOPath,SystemPath);
+
+@END_Body 
+
+@END_Contents 

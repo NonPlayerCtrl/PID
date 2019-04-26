@@ -30,6 +30,7 @@
 , OnOff
 , UseNoUse
 , Pressure
+//  UsbFile
 
 END_IMPORT
 %IMPORT_OVER_LISTFILE_OBJECT
@@ -48,6 +49,8 @@ END_IMPORT
 , tCalculatedProfiles
 , tsRequiredPumps
 , tsHydrMaxValues
+, UsbFilesArray
+//  UsbFile
 , KCTRL_YXGen_RampType_Square
 , KCTRL_YXGen_RampType_Linear
 , nNormal
@@ -912,6 +915,41 @@ END_IMPORT
     ;
  sv_Uk_3 : REAL
     ;
+ sv_PathArray : UsbFilesArray
+    
+// Path  Path 
+;
+ // sv_PathDisplay : UsbFile
+     // %DISPLAY_LEVEL 1  %INPUT_LEVEL 5
+ // %FORMAT UsbFile 
+// Path Display Path Display
+// ;
+ sv_bUse1 : BOOL
+    ;
+ sv_bUse2 : BOOL
+    ;
+ sv_bUse3 : BOOL
+    ;
+ sv_bUse4 : BOOL
+    ;
+ sv_bUse5 : BOOL
+    ;
+ sv_bUse6 : BOOL
+    ;
+ sv_bUse7 : BOOL
+    ;
+ sv_bUse8 : BOOL
+    ;
+ sv_bUse9 : BOOL
+    ;
+ sv_bUse10 : BOOL
+    ;
+ sv_rActOutput : INT
+    ;
+ sv_rSetOutput : INT
+    ;
+ sv_bStartPID : BOOL
+    ;
  sv_rSmoothFactor : REAL := 0.0
  %PLAUSIBILITY 0.0..100.0    RETAIN  %VARIABLE_GROUP VG_MachineData  %DISPLAY_LEVEL 1  %INPUT_LEVEL cLevelProduction
  %FORMAT fmt31  %UNIT Percent 
@@ -940,6 +978,11 @@ END_IMPORT
  %SET_ALARM_EVENTS system.evAlarmLampBlink,system.evAlarmAutoManual  %RESET_ALARM_EVENTS system.evAlarmLampReset 
 // Mechanical ejector stroke does not fit to used stroke and offset, check settings on ejector parameter mask{#]Ejector stroke setting doesn't fit to calibrated stroke and offset.{#]The previous ejector zero position setting produced an offset and a used stroke distance which doesn't fit the current ejector stroke setting.{#]If the ejector stroke was recently changed either change back to previous working setting. Or, if current ejector stroke setting is correct change to setup mode and use the set ejector zero position functionality.
  ;
+  erCopyDone
+%ACKNOWLEDGEMENT %USER %PROTOCOL %NO
+
+// CopyDone!
+ ;
 %END
 
 
@@ -955,7 +998,7 @@ END_IMPORT
 
 @BEG_Export 
 @RT(16)SveTreeContainer 
-86 
+101 
 @SysVar @RT(16)sv_bOutputActive @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
 @F @F 
 @T 
@@ -3978,6 +4021,219 @@ END_IMPORT
 0 
 
 
+@SysVar @RT(12)sv_PathArray @RT(0) @T @T @DERIVED 0 @T @T @DT @RT(13)UsbFilesArray @RT(0) @T @T @UNKNOWN 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(5)Path  @RT(5)Path  @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 
+@AttrSym @RT(12)sv_PathArray @RT(0) @F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(5)Path  @RT(5)Path  @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+
+
+@SysVar @RT(14)sv_PathDisplay @RT(0) @T @T @DERIVED 0 @T @T @DT @RT(7)UsbFile @RT(0) @T @T @UNKNOWN 0 @F 
+@F @T 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(1)1 @RT(1)5 @RT(0) @RT(7)UsbFile @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(12)Path Display @RT(12)Path Display @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 
+@AttrSym @RT(14)sv_PathDisplay @RT(0) @F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(1)1 @RT(1)5 @RT(0) @RT(7)UsbFile @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(12)Path Display @RT(12)Path Display @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+
+
+@SysVar @RT(8)sv_bUse1 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse2 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse3 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse4 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse5 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse6 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse7 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse8 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(8)sv_bUse9 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(9)sv_bUse10 @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(13)sv_rActOutput @RT(0) @T @F @DT @RT(3)INT @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(13)sv_rSetOutput @RT(0) @T @F @DT @RT(3)INT @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
+@SysVar @RT(12)sv_bStartPID @RT(0) @T @F @DT @RT(4)BOOL @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+4 @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@RT(0) @RT(0) 
+@RT(0) @RT(0) @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+0 
+
+
 @SysVar @RT(16)sv_rSmoothFactor @RT(0) @T @F @DT @RT(4)REAL @RT(0) @T @T @BASIC 0 @F 
 @F @F 
 @T 
@@ -4006,7 +4262,7 @@ END_IMPORT
 0 
 
 @RT(15)SATreeContainer 
-4 @BEG_Attrib 
+5 @BEG_Attrib 
 15 @RT(0) @RT(0) 
 @RT(17)erEjectorHoldInFA @RT(1)3 @RT(1)y @RT(0) @RT(0) @RT(4)User @RT(568)Ejector mode "hold" not allowed in full automatic mode{#]Ejector mode and operation mode are incompatible.{#]Ejector mode "hold" will keep the ejector in forward position when removing produced parts at the end of a semi automatic cycle. Since there is no manual part removal in full automatic mode, the ejector mode "hold" is not allowed in this case.{#]Change the ejector mode to some other mode than "hold" according to the process requirements.\u000a<br><br>\u000aIf the ejector mode should be hold, the production mode should be the according half-automatic mode. 
 @END_Attrib 
@@ -4021,6 +4277,10 @@ END_IMPORT
 @F @BEG_Attrib 
 15 @RT(0) @RT(0) 
 @RT(16)erStrokeTooSmall @RT(1)3 @RT(1)y @RT(48)system.evAlarmLampBlink,system.evAlarmAutoManual @RT(23)system.evAlarmLampReset @RT(11)Application @RT(537)Mechanical ejector stroke does not fit to used stroke and offset, check settings on ejector parameter mask{#]Ejector stroke setting doesn't fit to calibrated stroke and offset.{#]The previous ejector zero position setting produced an offset and a used stroke distance which doesn't fit the current ejector stroke setting.{#]If the ejector stroke was recently changed either change back to previous working setting. Or, if current ejector stroke setting is correct change to setup mode and use the set ejector zero position functionality. 
+@END_Attrib 
+@F @BEG_Attrib 
+15 @RT(0) @RT(0) 
+@RT(10)erCopyDone @RT(0) @RT(0) @RT(0) @RT(0) @RT(4)User @RT(9)CopyDone! 
 @END_Attrib 
 @F 
 

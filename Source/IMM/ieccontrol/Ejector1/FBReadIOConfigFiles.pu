@@ -1,0 +1,266 @@
+IMPORT_OVER_LISTFILE
+ KFILE_Status
+, UsbFilesArray
+
+END_IMPORT
+
+FUNCTION_BLOCK FBReadIOConfigFiles #DUMMY_EDIT_BLOCK
+
+VAR_INPUT
+ PLCFiles : STRING(255) := '/harddisk0/PLCIO';
+END_VAR
+
+VAR_OUTPUT
+ PathArray : UsbFilesArray;
+END_VAR
+
+VAR_TEMP
+ j : DINT;
+END_VAR
+
+VAR
+ Stable_Free : KFILE_Status;
+ Stable_First : KFILE_Status;
+ Stable_Next : KFILE_Status;
+ i : LINT;
+ harddisk0 : STRING(255) := '/harddisk0';
+ s : STRING(255);
+ s2 : STRING(255);
+END_VAR
+
+(* IecGraph-Code *)
+
+(* init step *)
+INITIAL_STEP Step1:
+Action1 (P);
+END_STEP
+
+ACTION Action1: #BEGIN_EDIT_BLOCK
+//Check harddisk left memory
+Stable_Free :=  KFILE_VolumeFree(harddisk0,i) 
+
+;#END_EDIT_BLOCK END_ACTION (*Action1*)
+
+(* steps *)
+STEP Step4:
+Action3 (P);
+END_STEP
+
+ACTION Action3: #BEGIN_EDIT_BLOCK
+//get first file name in the file
+Stable_First := KFILE_GetFirst(PLCFiles,s);
+PathArray[1] := s;
+s2 := s;
+FOR j :=2 TO 10 DO
+   //get other file name in the file
+   Stable_Next := KFILE_GetNext(s2,s2);
+   PathArray[j] := s2;  
+END_FOR;
+//Now all file name in sv_PathArray
+
+;#END_EDIT_BLOCK END_ACTION (*Action3*)
+STEP Step2:
+Action5 (N);
+END_STEP
+
+ACTION Action5: #BEGIN_EDIT_BLOCK
+RETURN;
+
+;#END_EDIT_BLOCK END_ACTION (*Action5*)
+
+(* transitions *)
+TRANSITION Trans3 (* Trans3 *) FROM Step1 TO Step4 :=  #BEGIN_EDIT_BLOCK
+Stable_Free = KFILE_Status_OK 
+;#END_EDIT_BLOCK
+END_TRANSITION
+
+TRANSITION Trans5 (* Trans5 *) FROM Step4 TO Step2 :=  #BEGIN_EDIT_BLOCK
+Stable_Next = KFILE_Status_NOTOK
+;#END_EDIT_BLOCK
+END_TRANSITION
+
+TRANSITION Trans2 (* Trans2 *) FROM Step2 TO Step1 :=  #BEGIN_EDIT_BLOCK
+TRUE
+;#END_EDIT_BLOCK
+END_TRANSITION
+
+(* end IecGraph-Code *)
+(* sfc-code *)
+(* end sfc-code *)
+
+
+END_FUNCTION_BLOCK
+
+
+
+#END_OF_IEC_PART
+
+@Puma @IecEditor 6 152 @Pou 25 
+@@@BEG_Comment@@@
+
+@@@END_Comment@@@
+
+@BEG_Contents 
+
+@BEG_Func 
+@RT(17)FuncTreeContainer 
+0 
+@END_Func 
+
+@BEG_Const 
+@RT(18)ConstTreeContainer 
+0 
+@END_Const 
+
+@BEG_Export 
+
+@BEG_Kind 
+@FUNCTION_BLOCK @RT(19)FBReadIOConfigFiles @SEQUENTIAL_FLOW_CHART 
+@RT(0) @RT(0) @RT(0) 
+@END_Kind 
+
+@BEG_Dcl 
+@RT(16)DclTreeContainer 
+10 
+@Var @RT(11)Stable_Free @RT(0) @T @T @DERIVED 0 @T @T @DT @RT(12)KFILE_Status @RT(0) @T @T @UNKNOWN 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@Var @RT(12)Stable_First @RT(0) @T @T @DERIVED 0 @T @T @DT @RT(12)KFILE_Status @RT(0) @T @T @UNKNOWN 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@Var @RT(11)Stable_Next @RT(0) @T @T @DERIVED 0 @T @T @DT @RT(12)KFILE_Status @RT(0) @T @T @UNKNOWN 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@Var @RT(1)i @RT(0) @T @F @DT @RT(4)LINT @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@Var @RT(1)j @RT(0) @T @F @DT @RT(4)DINT @RT(0) @T @T @BASIC 0 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 4 @F @F @F @F 
+
+@Var @RT(9)harddisk0 @RT(0) @T @F @DT @RT(11)STRING(255) @RT(0) @T @T @STRING 0 @F @RT(3)255 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(12)'/harddisk0' @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@Var @RT(8)PLCFiles @RT(0) @T @F @DT @RT(11)STRING(255) @RT(0) @T @T @STRING 0 @F @RT(3)255 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(18)'/harddisk0/PLCIO' @RT(0) @RT(0) 
+@END_Attrib 
+1 1 @F @F @F @F 
+
+@Var @RT(9)PathArray @RT(0) @T @T @DERIVED 0 @F @RT(13)UsbFilesArray @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 3 @F @F @F @F 
+
+@Var @RT(1)s @RT(0) @T @F @DT @RT(11)STRING(255) @RT(0) @T @T @STRING 0 @F @RT(3)255 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@Var @RT(2)s2 @RT(0) @T @F @DT @RT(11)STRING(255) @RT(0) @T @T @STRING 0 @F @RT(3)255 @F 
+@F @F 
+@T 
+@BEG_Attrib 
+3 @RT(0) @RT(0) @RT(0) 
+@END_Attrib 
+1 0 @F @F @F @F 
+
+@END_Dcl 
+
+@END_Export 
+
+@BEG_SfcBody 
+2 2 2 
+
+@BEG_SfcData 2 
+@StepSeq @RT(4)sseq @F 1 
+@Loop @RT(4)loop @F 2 
+@StepSeq @RT(3)seq @F 5 
+@Step @RT(5)Step1 @F @T @F @F @RT(0) @F 
+@AcbCont @RT(7)unnamed @F 1 
+@Acb @RT(7)Action1 @F @T @RT(1)P @RT(0) @F @F @T @TL(3)
+//Check harddisk left memory
+Stable_Free :=  KFILE_VolumeFree(harddisk0,i) 
+
+@F 
+
+@Trans @RT(6)Trans3 @F @T @F @F @T @T @TL(2)
+Stable_Free = KFILE_Status_OK 
+
+@RT(6)Trans3 @F 
+@Step @RT(5)Step4 @F @F @F @F @RT(0) @F 
+@AcbCont @RT(7)unnamed @F 1 
+@Acb @RT(7)Action3 @F @T @RT(1)P @RT(0) @F @F @T @TL(11)
+//get first file name in the file
+Stable_First := KFILE_GetFirst(PLCFiles,s);
+PathArray[1] := s;
+s2 := s;
+FOR j :=2 TO 10 DO
+   //get other file name in the file
+   Stable_Next := KFILE_GetNext(s2,s2);
+   PathArray[j] := s2;  
+END_FOR;
+//Now all file name in sv_PathArray
+
+@F 
+
+@Trans @RT(6)Trans5 @F @T @F @F @T @T @TL(2)
+Stable_Next = KFILE_Status_NOTOK
+
+@RT(6)Trans5 @F 
+@Step @RT(5)Step2 @F @F @F @F @RT(0) @F 
+@AcbCont @RT(7)unnamed @F 1 
+@Acb @RT(7)Action5 @F @T @RT(1)N @RT(0) @F @F @T @TL(2)
+RETURN;
+
+@F 
+
+
+@Trans @RT(6)Trans2 @F @T @T @T @T @T @TL(2)
+TRUE
+
+@RT(6)Trans2 @F 
+
+@END_SfcData 
+@SaActions 0 
+@SaTrans 0 
+@SaExits 0 
+@END_SfcBody 
+
+@END_Contents 

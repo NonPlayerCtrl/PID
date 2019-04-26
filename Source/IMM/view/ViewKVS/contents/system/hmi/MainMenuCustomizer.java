@@ -133,7 +133,7 @@ public class MainMenuCustomizer {
       mainMenu.addContextMask(sOverviewMask, "com.keba.kemro.kvs.notepad.NotepadMask");
 
       mainMenu.addContextMask(sMoldMask, "Mold1.hmi.MoldParameterMask1");
-
+      //mainMenu.addContextMask(sMoldMask, "Mold1.hmi.usb");
       if (MachineEquipment.hasOption("Mold1", MachineEquipment.SUB_OPTION_MOLD_DIRECTLOCK)) {
          mainMenu.addContextMask(sMoldMask, "MoldHeightAdjust1.hmi.MoldAdjustMaskDirectLock1");
       }
